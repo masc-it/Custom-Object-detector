@@ -8,6 +8,7 @@
 - Upload to Kaggle
 	
 ## Installation, Training & export (Colab)
+https://colab.research.google.com/github/TannerGilbert/Tensorflow-Object-Detection-API-Train-Model/blob/master/Tensorflow_2_Object_Detection_Train_model.ipynb
 
 ## Local dependencies setup
 
