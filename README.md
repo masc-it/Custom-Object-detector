@@ -9,6 +9,13 @@
 	
 ## Installation, Training & export (Colab)
 
+## Local dependencies setup
+
+Same as colab
+https://www.youtube.com/watch?v=cvyDYdI2nEI
+
+- protoc: https://github.com/protocolbuffers/protobuf/releases/download/v3.13.0/protoc-3.13.0-win64.zip
+
 ## Test 1
 
 Live detection from local webcam
