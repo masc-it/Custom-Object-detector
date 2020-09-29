@@ -1,4 +1,4 @@
-# Tensorflow Object Detection with Tensorflow 2
+# Object Detection with Tensorflow 2
 
 ## Dataset
 - Get images (train, test)
