@@ -1,1 +1,1 @@
-python server.py -m D:/Download/test/lol/ -l  D:/Download/test/lol/saved_model.pbtxt
+python server.py -m D:\Projects\python\custom_object_detection_1 -l  D:\Projects\python\custom_object_detection_1\saved_model.pbtxt

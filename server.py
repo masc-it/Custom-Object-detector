@@ -125,17 +125,7 @@ def detect():
         image_np = np.array(image)
         image_np = cv2.resize(image_np, (800, 600))
         output_dict = run_inference_for_single_image(model, image_np)
-        # Visualization of the results of a detection.
-        # vis_util.visualize_boxes_and_labels_on_image_array(
-            # image_np,
-            # output_dict['detection_boxes'],
-            # output_dict['detection_classes'],
-            # output_dict['detection_scores'],
-            # category_index,
-            # instance_masks=output_dict.get('detection_masks_reframed', None),
-            # use_normalized_coordinates=True,
-            # line_thickness=8)
-        
+                
         boxes = output_dict['detection_boxes']
         max_boxes_to_draw = boxes.shape[0]
         # get scores to get a threshold
@@ -160,8 +150,6 @@ def detect():
             boxess.append(f)
             print(f.data())
             
-        # faces = recognize(detection.get_faces(image, threshold))
-
         j = json.dumps([b.data() for b in boxess])
         print("Result:", j)
 
@@ -184,18 +172,18 @@ def detect():
         return e
 
 
+if not is_model_loaded:
+    parser = argparse.ArgumentParser(description='Detect objects inside webcam videostream')
+    parser.add_argument('-m', '--model', type=str, required=True, help='Model Path')
+    parser.add_argument('-l', '--labelmap', type=str, required=True, help='Path to Labelmap')
+    args = parser.parse_args()
+    model = load_model(args.model)
+    category_index = label_map_util.create_category_index_from_labelmap(args.labelmap, use_display_name=True)
+    is_model_loaded = True
+        
 
 if __name__ == '__main__':
-
-    if not is_model_loaded:
-        parser = argparse.ArgumentParser(description='Detect objects inside webcam videostream')
-        parser.add_argument('-m', '--model', type=str, required=True, help='Model Path')
-        parser.add_argument('-l', '--labelmap', type=str, required=True, help='Path to Labelmap')
-        args = parser.parse_args()
-        model = load_model(args.model)
-        category_index = label_map_util.create_category_index_from_labelmap(args.labelmap, use_display_name=True)
-        is_model_loaded = True
-    
+ 
     print("starting server...")
     app.run(debug=True, host='0.0.0.0', ssl_context='adhoc')
     # app.run(host='0.0.0.0')
