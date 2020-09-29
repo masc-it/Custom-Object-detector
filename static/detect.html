@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ral-Time Tensor Flow Face Detection and Recognition</title>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+	
+    <style>
+        
+        
+         canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index:1
+        }
+        
+		#videoDiv {
+    box-sizing: border-box;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    video { height: 100%;}
+ }
+    </style>
+</head>
+<body>
+
+<!--<h4>Real-Time Tensorflow Face Recognition</h4>-->
+
+<div id="videoDiv" >
+ <video id="myVideo" autoplay></video>
+</div>
+
+<button id="full">Full</button>
+
+<script src="/static/local.js"></script>
+<script id="objDetect" src="/static/detect.js" data-source="myVideo" data-mirror="true" data-uploadWidth="800" data-scoreThreshold="0.40"></script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+https://colab.research.google.com/drive/1iDQxq3oyFMVdRAqE-94oB68t4v9zLHL5
+
+0 - Installazione
+	- TF 2.2 (pip install -U --pre tensorflow=="2.2.0")
+	- https://www.youtube.com/watch?v=cvyDYdI2nEI
+
+1 - Dati 
+	- Prepara dataset (train, test)
+	- resize immagini
+	- LabelImg
+	- xml_to_csv
+	- Upload to Kaggle
+	
+2 - TF
+	- python generate_tfrecord.py images/test_labels.csv test.tfrecord
+	- python generate_tfrecord.py images/train_labels.csv train.tfrecord
+
+3 - Configure Training
+
+4 - Export trained model
+	- saved_model.pb
+	- variables folder
+	
+5 - Test detector
+	- python detect_from_webcam.py -m D:/Download/test/lol/ -l  D:/Download/test/lol/saved_model.pbtxt
+	- python server.py -m D:/Download/test/lol/ -l  D:/Download/test/lol/saved_model.pbtxt
+
+0-2-3-4 su colab
+
+1-5 in locale
