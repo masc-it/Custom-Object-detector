@@ -1,5 +1,3 @@
-https://colab.research.google.com/drive/1iDQxq3oyFMVdRAqE-94oB68t4v9zLHL5
-
 0 - Installazione
 	- TF 2.2 (pip install -U --pre tensorflow=="2.2.0")
 	- https://www.youtube.com/watch?v=cvyDYdI2nEI
